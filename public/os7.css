@@ -1,0 +1,434 @@
+/* ==========================================================================
+   Nexus 7.0 — OS shell (Windows 11 × Ubuntu hybrid)
+   Loaded after styles.css. Modern taskbar, acrylic panels, rounded chrome.
+   ========================================================================== */
+
+:root {
+  --os-radius: 12px;
+  --os-radius-sm: 8px;
+  --os-radius-lg: 16px;
+  --os-blur: 28px;
+  --os-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --os-shadow-win: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --taskbar-h: 56px;
+  --panel-h: 36px;
+  --fluent-bg: rgba(32, 32, 36, 0.72);
+  --fluent-bg-strong: rgba(28, 28, 32, 0.88);
+}
+
+/* ---------- Desktop wallpaper (Win11 bloom + Ubuntu depth) ---------- */
+.wallpaper {
+  background:
+    radial-gradient(1200px 700px at 12% -5%, rgba(110, 231, 183, 0.14), transparent 55%),
+    radial-gradient(900px 600px at 88% 10%, rgba(139, 164, 255, 0.12), transparent 50%),
+    radial-gradient(800px 500px at 50% 100%, rgba(167, 139, 250, 0.08), transparent 55%),
+    linear-gradient(165deg, #0a0c12 0%, #07080c 45%, #05060a 100%) !important;
+}
+.wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Wallpaper widgets — glass cards */
+#briefing-widget,
+#ws-pill,
+#action-center-pill {
+  backdrop-filter: blur(var(--os-blur)) saturate(1.2);
+  -webkit-backdrop-filter: blur(var(--os-blur)) saturate(1.2);
+  background: var(--fluent-bg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--os-radius-lg) !important;
+  box-shadow: var(--os-shadow);
+}
+
+/* ---------- Top panel (Ubuntu-style) ---------- */
+.menubar {
+  height: var(--panel-h);
+  padding: 0 14px;
+  background: rgba(12, 14, 20, 0.55) !important;
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: none !important;
+}
+.menubar .brand {
+  gap: 8px;
+}
+.menubar .brand .mark {
+  color: var(--mint);
+  font-size: 14px;
+}
+.menubar .brand-name {
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+.menubar .brand-sub {
+  opacity: 0.45;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.pill {
+  height: 24px !important;
+  padding: 0 10px !important;
+  border-radius: 999px !important;
+  font-size: 11px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.pill:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.pill.on {
+  border-color: rgba(110, 231, 183, 0.35) !important;
+  color: var(--mint) !important;
+}
+.clock {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+/* ---------- Windows (Win11 rounded acrylic) ---------- */
+.win {
+  border-radius: var(--os-radius-lg) !important;
+  background: var(--fluent-bg-strong) !important;
+  backdrop-filter: blur(var(--os-blur)) saturate(1.25);
+  -webkit-backdrop-filter: blur(var(--os-blur)) saturate(1.25);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--os-shadow-win) !important;
+  overflow: hidden;
+}
+.win.focused {
+  border-color: rgba(110, 231, 183, 0.28) !important;
+  box-shadow:
+    0 20px 56px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(110, 231, 183, 0.18),
+    0 0 40px -12px rgba(110, 231, 183, 0.2) !important;
+}
+.win-titlebar {
+  height: 40px !important;
+  padding: 0 12px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+.win-title {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+.win-controls button {
+  width: 32px !important;
+  height: 28px !important;
+  border-radius: 6px !important;
+  opacity: 0.7;
+  transition: background 0.12s, opacity 0.12s;
+}
+.win-controls button:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.win-controls .close:hover {
+  background: #e81123 !important;
+  color: #fff !important;
+}
+.win-body {
+  background: transparent !important;
+}
+
+/* ---------- Taskbar / Dock (Win11 centered) ---------- */
+.dock-wrap {
+  padding-bottom: 10px !important;
+  z-index: 9000 !important;
+}
+.dock {
+  height: var(--taskbar-h) !important;
+  padding: 6px 10px !important;
+  gap: 4px !important;
+  background: rgba(24, 26, 32, 0.72) !important;
+  backdrop-filter: blur(32px) saturate(1.4);
+  -webkit-backdrop-filter: blur(32px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  pointer-events: auto;
+}
+.dock-item {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.15s !important;
+}
+.dock-item:hover {
+  transform: translateY(-8px) scale(1.08) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.dock-item.active {
+  background: rgba(110, 231, 183, 0.12) !important;
+  color: var(--mint) !important;
+}
+.dock-item.active .dotind {
+  width: 4px !important;
+  height: 4px !important;
+  bottom: 5px !important;
+  background: var(--mint) !important;
+  box-shadow: 0 0 6px var(--mint);
+}
+.dock-launch {
+  background: linear-gradient(145deg, rgba(110, 231, 183, 0.18), rgba(139, 164, 255, 0.12)) !important;
+  border: 1px solid rgba(110, 231, 183, 0.2) !important;
+}
+.dock-tip {
+  border-radius: 8px !important;
+  background: rgba(20, 22, 28, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 11px !important;
+  padding: 4px 8px !important;
+}
+
+/* ---------- Start / Launcher (Win11 Start menu style) ---------- */
+.launcher {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+.launcher-box {
+  width: min(640px, 92vw) !important;
+  max-height: min(560px, 78vh) !important;
+  border-radius: 20px !important;
+  background: rgba(28, 30, 38, 0.92) !important;
+  backdrop-filter: blur(40px) saturate(1.3);
+  -webkit-backdrop-filter: blur(40px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55) !important;
+  padding: 16px 18px 20px !important;
+}
+.launcher-head input {
+  height: 40px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-size: 14px !important;
+  padding: 0 14px !important;
+}
+.launcher-head input:focus {
+  border-color: rgba(110, 231, 183, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.12);
+  outline: none;
+}
+.launcher-title {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  margin: 14px 4px 10px !important;
+}
+.launcher-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)) !important;
+  gap: 8px !important;
+}
+.launcher-tile {
+  border-radius: 12px !important;
+  padding: 14px 8px 12px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid transparent !important;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s !important;
+}
+.launcher-tile:hover {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px);
+}
+.launcher-tile .glyph {
+  font-size: 22px !important;
+  margin-bottom: 6px;
+}
+.launcher-tile .label {
+  font-size: 11px !important;
+  font-weight: 500;
+}
+
+/* ---------- Command palette (Spotlight / PowerToys) ---------- */
+.palette-box {
+  border-radius: 16px !important;
+  background: rgba(28, 30, 38, 0.94) !important;
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden;
+}
+.palette-box input {
+  height: 52px !important;
+  font-size: 16px !important;
+  padding: 0 18px !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.palette-list .item {
+  border-radius: 8px !important;
+  margin: 2px 8px !important;
+}
+.palette-list .item.active,
+.palette-list .item:hover {
+  background: rgba(110, 231, 183, 0.12) !important;
+}
+
+/* ---------- Buttons, cards, inputs ---------- */
+.btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: background 0.15s, transform 0.1s, box-shadow 0.15s !important;
+}
+.btn.primary {
+  background: linear-gradient(180deg, var(--mint), var(--mint-dim)) !important;
+  color: #0a0c10 !important;
+  border: none !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 4px 12px rgba(52, 211, 153, 0.25);
+}
+.btn.primary:hover {
+  filter: brightness(1.05);
+}
+.btn.sm {
+  border-radius: 7px !important;
+}
+.card {
+  border-radius: var(--os-radius) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea {
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(110, 231, 183, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(110, 231, 183, 0.12) !important;
+  outline: none;
+}
+
+/* ---------- Chat / messages ---------- */
+.msg.user .bubble {
+  border-radius: 16px 16px 4px 16px !important;
+  background: rgba(110, 231, 183, 0.15) !important;
+  border: 1px solid rgba(110, 231, 183, 0.2) !important;
+}
+.msg.assistant .bubble {
+  border-radius: 16px 16px 16px 4px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ---------- Approval / Action Center ---------- */
+.approval {
+  border-radius: 12px !important;
+  border: 1px solid rgba(251, 191, 36, 0.25) !important;
+  background: rgba(251, 191, 36, 0.06) !important;
+}
+.tag {
+  border-radius: 6px !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Toasts ---------- */
+.toasts .toast {
+  border-radius: 10px !important;
+  backdrop-filter: blur(16px);
+  background: rgba(28, 30, 38, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--os-shadow);
+}
+
+/* ---------- Scrollbars ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+/* ---------- Light theme overrides for 7.0 ---------- */
+[data-theme='white'] .dock {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+[data-theme='white'] .launcher-box,
+[data-theme='white'] .palette-box {
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+[data-theme='white'] .win {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ---------- System tray strip on taskbar area ---------- */
+.os-tray {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  z-index: 9001;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: rgba(24, 26, 32, 0.72);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.os-tray button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.os-tray button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+}
+
+/* Desktop context label */
+.os-version-badge {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 10;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.28;
+  pointer-events: none;
+  user-select: none;
+}

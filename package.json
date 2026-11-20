@@ -1,0 +1,50 @@
+{
+  "name": "nexus-agent-os",
+  "version": "7.2.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "desktop/main.mjs",
+  "description": "Nexus 7.1 — @eN browser refs, viewport AX filter, vision fallback, desktop CUA, subagents, MCP presets (Playwright), model routing.",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron .",
+    "test": "node --test scripts/test-providers.mjs scripts/test-vision.mjs scripts/test-workspace.mjs scripts/test-missions.mjs scripts/test-session-workspaces.mjs scripts/test-browser-safety.mjs scripts/test-radar.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "local.nexus.agentos",
+    "productName": "Nexus",
+    "asar": true,
+    "directories": {
+      "output": "dist-electron/release"
+    },
+    "files": [
+      "desktop/**/*",
+      "server.js",
+      "package.json",
+      "lib/**/*",
+      "public/**/*",
+      "skills/**/*",
+      "agents/**/*",
+      "docs/**/*",
+      "scripts/mcp-server.mjs"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  }
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nexus — Refined Workspace</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/os7.css" />
+  <link rel="stylesheet" href="/workspace.css?v=712-refined" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230b0d12'/><path d='M16 6l8 10-8 10-8-10z' fill='none' stroke='%236ee7b7' stroke-width='2'/></svg>" />
+</head>
+<body>
+  <div id="wallpaper" class="wallpaper"></div>
+  <div class="grain"></div>
+
+  <header class="menubar">
+    <div class="brand">
+      <span class="mark">◈</span>
+      <span class="brand-name">NEXUS</span>
+      <span class="brand-sub">agent&nbsp;os</span>
+    </div>
+    <div class="menubar-center">
+      <button class="pill" id="pill-model" title="Active model">—</button>
+      <button class="pill" id="pill-browser" title="Browser">browser · off</button>
+      <button class="pill" id="pill-google" title="Google">google · off</button>
+    </div>
+    <div class="menubar-right">
+      <button class="kbd-hint" id="palette-btn"><kbd>Ctrl</kbd><kbd>K</kbd></button>
+      <span class="clock" id="clock">--:--</span>
+    </div>
+  </header>
+
+  <main id="windows" class="windows"></main>
+
+  <div id="palette" class="palette" hidden>
+    <div class="palette-box">
+      <input id="palette-input" placeholder="Jump to an app or type a task for Nexus…" autocomplete="off" />
+      <div id="palette-list" class="palette-list"></div>
+      <div class="palette-foot"><span>↑↓ move</span><span>↵ open</span><span>esc close</span></div>
+    </div>
+  </div>
+
+  <footer class="dock-wrap">
+    <nav id="dock" class="dock"></nav>
+  </footer>
+
+  <div id="launcher" class="launcher" hidden>
+    <div class="launcher-box">
+      <div class="launcher-head">
+        <input id="launcher-search" type="text" placeholder="Search apps — Esc closes" autocomplete="off" />
+        <button class="btn sm ghost" id="launcher-close">esc</button>
+      </div>
+      <div class="launcher-title">All apps</div>
+      <div id="launcher-grid" class="launcher-grid"></div>
+    </div>
+  </div>
+
+  <div class="os-version-badge">Nexus 7 · Agent OS</div>
+  <div class="os-tray" id="os-tray" title="System tray">
+    <button type="button" id="tray-ac" title="Action Center">⚡</button>
+    <button type="button" id="tray-ws" title="Workspaces">▦</button>
+    <button type="button" id="tray-plugins" title="Plugins">⌘</button>
+    <button type="button" id="tray-settings" title="Settings">⚙</button>
+  </div>
+  <div id="toasts" class="toasts"></div>
+  <div id="approvals" class="approvals"></div>
+  <script src="/app.js?v=712-refined" type="module"></script>
+</body>
+</html>

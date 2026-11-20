@@ -1,0 +1,8 @@
+{
+  "id": "hello",
+  "name": "Hello Plugin",
+  "version": "1.0.0",
+  "description": "Example plugin — registers a hello_world tool",
+  "main": "index.js",
+  "permissions": ["tools"]
+}

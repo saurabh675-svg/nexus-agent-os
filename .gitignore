@@ -1,0 +1,22 @@
+/data/
+/node_modules/
+/dist/
+/dist-electron/
+/.env
+/.env.*
+!.env.example
+*.log
+*.tmp
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.p12
+*.pfx
+*.key
+model-credentials.json
+
+# Local recovery and source-audit notes
+VALIDATION.md
+SOURCE-CHANGES.json
+ORIGINAL-SOURCE-SHA256.json

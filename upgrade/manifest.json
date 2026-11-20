@@ -1,0 +1,93 @@
+{
+  "name": "Nexus 7.1 Refined",
+  "files": [
+    {
+      "path": "public/app.js",
+      "sha256": "285139ff380a0467b9a52ceb4830dcf70c2c4346e3e44fd27cd84b045ce381dc",
+      "allowedHashes": [
+        "ff358c57af0a9219650ff2b8f170ce1dd3ce818e145f55c3f9c976c7fa7a03f2",
+        "a69c2ad5fcaa692dda236404dda8adfa97805b7d5c157efaf12cd3ef49c170cf",
+        "285139ff380a0467b9a52ceb4830dcf70c2c4346e3e44fd27cd84b045ce381dc"
+      ]
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "c927a6d0e4339530821341ad3774d988249f2a82eca15a32a888e8f84dc10780",
+      "allowedHashes": [
+        "8fd5a1ac5838aa9bb432adaa4d17924c17592b3218f37a0cc3279f3c1d81e1f1",
+        "857f2894c55d7ae0a5fcdf7bed821249604455ed73619aca44eeaa22d61e06f3",
+        "c927a6d0e4339530821341ad3774d988249f2a82eca15a32a888e8f84dc10780"
+      ]
+    },
+    {
+      "path": "public/workspace.css",
+      "sha256": "75195fe25ee0363e1f816c014ef7944af13dad1821cc13426e8858fb3c6f160f",
+      "allowedHashes": [
+        "17de0999ab38e17cc88b9029b93a9d0de3aaaf788c94e91ba080b6b40f480028",
+        "75195fe25ee0363e1f816c014ef7944af13dad1821cc13426e8858fb3c6f160f"
+      ]
+    },
+    {
+      "path": "public/workspace-runtime.js",
+      "sha256": "467f9ddb407d05e6b567d8a61e053520056c392e4f51ab1e65e6fd3dc6f735f9",
+      "allowedHashes": [
+        "467f9ddb407d05e6b567d8a61e053520056c392e4f51ab1e65e6fd3dc6f735f9"
+      ]
+    },
+    {
+      "path": "start.cmd",
+      "sha256": "d5f42f328842eb26e0153f5b548cc4069cc7f8a01af3ba845bd35478a3c920a1",
+      "allowedHashes": [
+        "c5e9f236cacdfe40b38e140ed8b53fe5a9091e8510725aae2c15e639ba439972",
+        "d5f42f328842eb26e0153f5b548cc4069cc7f8a01af3ba845bd35478a3c920a1"
+      ]
+    },
+    {
+      "path": "Start Nexus.cmd",
+      "sha256": "d5f42f328842eb26e0153f5b548cc4069cc7f8a01af3ba845bd35478a3c920a1",
+      "allowedHashes": [
+        "d5f42f328842eb26e0153f5b548cc4069cc7f8a01af3ba845bd35478a3c920a1"
+      ]
+    },
+    {
+      "path": "scripts/start-enhanced.ps1",
+      "sha256": "6ba844fddedc51cdcf3ea5fb11f0b40b40ada80541eccac45e7a2f9936acb153",
+      "allowedHashes": [
+        "0ad2efd9f43fdcc8f51e3d013fd1398637e2ff11510fae41499fca473ea4861f",
+        "6ba844fddedc51cdcf3ea5fb11f0b40b40ada80541eccac45e7a2f9936acb153"
+      ]
+    },
+    {
+      "path": "lib/llm.js",
+      "sha256": "599c2b603d31a0601554712fb85809fe1bd8c4bdd08ed1e6849250fc4461e69d",
+      "allowedHashes": [
+        "1494ddf857d4adea8234d2a900718606eb080a304900c8ecf576ca2c68fea5e9",
+        "599c2b603d31a0601554712fb85809fe1bd8c4bdd08ed1e6849250fc4461e69d"
+      ]
+    },
+    {
+      "path": "lib/config.js",
+      "sha256": "83aa3fc22d76994922d379cc8c585ab0e8b557e8aee4d544332e7da3a4a4952a",
+      "allowedHashes": [
+        "53b20c5226eeef93777e261c6a112d9271cc0fd484247fc3178c6c99591d1a92",
+        "83aa3fc22d76994922d379cc8c585ab0e8b557e8aee4d544332e7da3a4a4952a"
+      ]
+    },
+    {
+      "path": "lib/agentloop.js",
+      "sha256": "134e838e03aa5e07bfc495c60ad8bc8e905a7986770677239c1b64940c7cd210",
+      "allowedHashes": [
+        "03e241f1e140d0d785e3d0982adac48377796a4f2d954c3e97414677b5993375",
+        "134e838e03aa5e07bfc495c60ad8bc8e905a7986770677239c1b64940c7cd210"
+      ]
+    },
+    {
+      "path": "server.js",
+      "sha256": "948cc2faba5dad73087405b0eadf4c41c2051420bef9f87ed594cdf1105f12c7",
+      "allowedHashes": [
+        "42294da1971450ee6e1e528b33c36b9da767d3bb090f9212e8e1fe9efe9ae09a",
+        "948cc2faba5dad73087405b0eadf4c41c2051420bef9f87ed594cdf1105f12c7"
+      ]
+    }
+  ]
+}

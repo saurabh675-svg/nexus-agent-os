@@ -1,0 +1,29 @@
+NEXUS 7.1 - REFINED EDITION
+
+ONE PACKAGE. BUILT FROM THE ORIGINAL NEXUS 7.1.
+
+ALREADY HAVE THE WORKING ORIGINAL? (RECOMMENDED)
+1. Extract this ZIP.
+2. Close the old Nexus startup window.
+3. Open Update existing Nexus.cmd and select your original Nexus 7.1 folder.
+4. Run Start Nexus.cmd INSIDE YOUR ORIGINAL FOLDER.
+The update keeps your data and connections. Changed files are backed up.
+Original or previous enhanced source versions are recognized; customized files are protected.
+
+WANT A SEPARATE CLEAN COPY?
+Open Start Nexus.cmd here. Requires an existing Node.js 20+ installation.
+Configure your own model and connections. A new copy cannot inherit account credentials.
+No software is installed automatically.
+
+USE
+Describe a task in Chat. The task cards prepare a prompt; they do not send it.
+Main tools are in the sidebar. More tools reveals the remaining original features.
+Connections and Settings are at the bottom. Classic view remains available.
+The header shows the selected provider; each reply shows the provider that answered.
+A local Ollama connection can proxy an Ollama Cloud model; that is labeled explicitly.
+
+RESTORE AN UPDATE
+Close Nexus. Copy files from the timestamped .nexus-upgrade-backups folder
+back to their original locations, then restart Nexus.
+
+Read VALIDATION.md for the actual checks and remaining limits.
